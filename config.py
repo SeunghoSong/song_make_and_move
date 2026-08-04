@@ -27,3 +27,4 @@ llm = LLM(
     model="gemini/gemini-3.1-flash-lite",
     temperature=0.3
 )
+#교체 되었나?
