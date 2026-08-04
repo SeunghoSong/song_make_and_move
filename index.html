@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartClass-AI | 스마트 강의실 출결 시스템</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 glass-panel border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-sky-500/30">SC</div>
+                <span class="font-bold text-xl tracking-wider text-white">Smart<span class="gradient-text">Class</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#hero" class="hover:text-sky-400 transition-colors">Home</a>
+                <a href="#prd" class="hover:text-sky-400 transition-colors">시스템 개요</a>
+                <a href="#features" class="hover:text-prd-features transition-colors">핵심 기능</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-screen flex flex-col justify-center">
+        <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-full w-fit mb-6">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs font-semibold text-slate-300">AI 기반 자동 출결 관리 솔루션</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+            강의실 출석의 혁신,<br>
+            <span class="gradient-text">SmartClass-AI 자동 출결 시스템</span>
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mb-10 leading-relaxed">
+            CCTV 안면 인식과 모바일 인증을 결합하여 대리 출석을 방지하고, 교수와 학생 모두에게 편리한 자동 출결 환경을 제공합니다.
+        </p>
+    </section>
+
+    <section id="prd" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800">
+        <h2 class="text-3xl font-bold mb-12">시스템 개요 및 문제 해결</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-panel p-8 rounded-2xl">
+                <h3 class="text-xl font-semibold mb-4 text-sky-400">문제점</h3>
+                <ul class="text-slate-300 space-y-2 list-disc pl-5">
+                    <li>교수의 수동 호명으로 인한 시간 낭비 및 누락 발생</li>
+                    <li>대리 출석 및 본인 확인의 어려움</li>
+                    <li>출석부 분실 또는 시스템 장애 시 출결 관리 불가</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl">
+                <h3 class="text-xl font-semibold mb-4 text-indigo-400">해결 방안</h3>
+                <ul class="text-slate-300 space-y-2 list-disc pl-5">
+                    <li>AI 기반 CCTV 안면 인식 자동 출석</li>
+                    <li>모바일 앱(WiFi/QR)을 통한 이중 확인</li>
+                    <li>실시간 출결 상태 확인 및 수동 수정 기능 제공</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800">
+        <h2 class="text-3xl font-bold mb-12">핵심 기능</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-xl border-t-4 border-t-sky-500">
+                <h4 class="font-bold mb-2">AI 안면 인식</h4>
+                <p class="text-sm text-slate-400">CCTV를 통한 다중 안면 데이터 수집 및 수강자 명단 대조</p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl border-t-4 border-t-indigo-500">
+                <h4 class="font-bold mb-2">모바일 이중 인증</h4>
+                <p class="text-sm text-slate-400">WiFi 연결 및 QR 코드를 활용한 본인 확인 및 재확인</p>
+            </div>
+            <div class="glass-panel p-6 rounded-xl border-t-4 border-t-emerald-500">
+                <h4 class="font-bold mb-2">통합 출결 관리</h4>
+                <p class="text-sm text-slate-400">출석/지각/결석/공결 상태 관리 및 교수 재량 수정 지원</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-900">
+        <p>© 2024 SmartClass-AI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
