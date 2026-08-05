@@ -13,6 +13,7 @@
         table { width: 100%; border-collapse: collapse; }
         th, td { padding: 12px 16px; border-bottom: 1px solid #334155; text-align: left; }
         th { color: #94a3b8; font-size: 0.875rem; }
+        .pipeline-step { border-left: 2px solid #38bdf8; padding-left: 1.5rem; margin-bottom: 1.5rem; }
     </style>
 </head>
 <body class="antialiased">
@@ -25,43 +26,62 @@
                 <span class="font-bold text-xl tracking-wider text-white">Smart<span class="gradient-text">Class</span></span>
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#overview" class="hover:text-sky-400">시스템 개요</a>
-                <a href="#scenario" class="hover:text-sky-400">사용자 시나리오</a>
+                <a href="#dashboard" class="hover:text-sky-400">실시간 모니터링</a>
+                <a href="#pipeline" class="hover:text-sky-400">기술 파이프라인</a>
                 <a href="#kpi" class="hover:text-sky-400">성공 지표(KPI)</a>
-                <a href="#tech" class="hover:text-sky-400">기술 스택</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="overview" class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <h1 class="text-5xl font-extrabold tracking-tight mb-6">하이브리드 AI 기반<br><span class="gradient-text">스마트 강의실 자동 출결 시스템</span></h1>
-        <p class="text-slate-400 text-xl max-w-3xl mb-10">CCTV 비전 AI와 모바일 교차 검증을 통해 대리 출석을 원천 차단하고, 수업 시간 100%를 보장하는 차세대 출결 솔루션입니다.</p>
+    <!-- Real-time Dashboard -->
+    <section id="dashboard" class="pt-32 pb-10 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">실시간 시스템 모니터링</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-panel p-6 rounded-2xl border border-sky-500/20">
-                <h3 class="text-sky-400 font-bold mb-2">Zero-Time 출석</h3>
-                <p class="text-sm text-slate-400">호명 시간 제거로 강의 당 10~15분 수업 시간 확보</p>
+            <div class="glass-panel p-6 rounded-2xl border border-sky-500/30">
+                <h3 class="text-slate-400 text-sm font-medium mb-1">시스템 FPS</h3>
+                <p class="text-4xl font-bold text-sky-400">30.2 <span class="text-lg text-slate-500">fps</span></p>
             </div>
-            <div class="glass-panel p-6 rounded-2xl border border-indigo-500/20">
-                <h3 class="text-indigo-400 font-bold mb-2">2차 교차 검증</h3>
-                <p class="text-sm text-slate-400">비전 AI + Wi-Fi/QR 인증으로 오인식률 0% 도전</p>
+            <div class="glass-panel p-6 rounded-2xl border border-indigo-500/30">
+                <h3 class="text-slate-400 text-sm font-medium mb-1">인식 정확도</h3>
+                <p class="text-4xl font-bold text-indigo-400">99.1 <span class="text-lg text-slate-500">%</span></p>
             </div>
-            <div class="glass-panel p-6 rounded-2xl border border-emerald-500/20">
-                <h3 class="text-emerald-400 font-bold mb-2">ROI 135%</h3>
-                <p class="text-sm text-slate-400">9개월 내 초기 구축 비용 회수 및 운영 효율 극대화</p>
+            <div class="glass-panel p-6 rounded-2xl border border-emerald-500/30">
+                <h3 class="text-slate-400 text-sm font-medium mb-1">시스템 부하(GPU)</h3>
+                <p class="text-4xl font-bold text-emerald-400">42 <span class="text-lg text-slate-500">%</span></p>
             </div>
         </div>
     </section>
 
-    <!-- Scenario -->
-    <section id="scenario" class="py-20 px-6 max-w-7xl mx-auto bg-slate-900/50">
-        <h2 class="text-3xl font-bold mb-12">사용자 시나리오</h2>
-        <div class="space-y-6 text-slate-300">
-            <p><strong>1단계:</strong> 학생 정보 동의 및 AI Vector DB 구축</p>
-            <p><strong>2단계:</strong> 강의 20분 전 CCTV 다중 안면 자동 감지</p>
-            <p><strong>3단계:</strong> 학내 Wi-Fi 연결 및 출석 앱 실행 (2차 재확인)</p>
-            <p><strong>4단계:</strong> 예외 발생 시 Dynamic QR 인증</p>
-            <p><strong>5단계:</strong> 교수 최종 재량 수정 및 이력 관리</p>
+    <!-- Pipeline Section -->
+    <section id="pipeline" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12">기술 사양 및 파이프라인</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Pre-processing -->
+            <div class="glass-panel p-8 rounded-2xl">
+                <h3 class="text-xl font-bold text-sky-400 mb-6">1. 영상 전처리 (Pre-processing)</h3>
+                <div class="pipeline-step">
+                    <h4 class="font-semibold text-slate-200">영상 정제</h4>
+                    <p class="text-sm text-slate-400">RTSP 버퍼링, 렌즈 왜곡 보정, ROI 마스킹 및 조명 플리커 필터링</p>
+                </div>
+                <div class="pipeline-step">
+                    <h4 class="font-semibold text-slate-200">안면 정밀 검출</h4>
+                    <p class="text-sm text-slate-400">YuNet/YOLOv8-Face 기반 탐지 및 5-Point Landmark 정렬</p>
+                </div>
+            </div>
+
+            <!-- Post-processing -->
+            <div class="glass-panel p-8 rounded-2xl">
+                <h3 class="text-xl font-bold text-indigo-400 mb-6">2. 데이터 후처리 (Post-processing)</h3>
+                <div class="pipeline-step">
+                    <h4 class="font-semibold text-slate-200">검증 및 트래킹</h4>
+                    <p class="text-sm text-slate-400">FQI 품질 평가, Liveness 탐지, ByteTrack 기반 다중 객체 추적</p>
+                </div>
+                <div class="pipeline-step">
+                    <h4 class="font-semibold text-slate-200">교차 검증</h4>
+                    <p class="text-sm text-slate-400">Wi-Fi BSSID/MAC 연동 및 미인식 시 Dynamic QR 전환</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -75,22 +95,10 @@
                 </thead>
                 <tbody>
                     <tr><td>AI 성능</td><td>인식 정확도</td><td>98.5% 이상</td></tr>
-                    <tr><td>정확성</td><td>수동 수정 수</td><td>전체 3% 미만</td></tr>
-                    <tr><td>기술 안정성</td><td>서버 응답 속도</td><td>500ms 이내</td></tr>
-                    <tr><td>사용자 편의성</td><td>출석 소요시간</td><td>0초 (Zero-Time)</td></tr>
+                    <tr><td>시스템 성능</td><td>처리 속도</td><td>15 FPS 이상</td></tr>
+                    <tr><td>신뢰성</td><td>오인식률</td><td>0% 수렴</td></tr>
                 </tbody>
             </table>
-        </div>
-    </section>
-
-    <!-- Tech Stack -->
-    <section id="tech" class="py-20 px-6 max-w-7xl mx-auto border-t border-slate-800">
-        <h2 class="text-3xl font-bold mb-8">기술 스택</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="glass-panel p-4 rounded-lg text-center">엣지 AI<br><span class="text-sky-400 text-sm">NVIDIA Jetson</span></div>
-            <div class="glass-panel p-4 rounded-lg text-center">비전 AI<br><span class="text-sky-400 text-sm">YOLOv8 / ArcFace</span></div>
-            <div class="glass-panel p-4 rounded-lg text-center">백엔드<br><span class="text-sky-400 text-sm">FastAPI / Node.js</span></div>
-            <div class="glass-panel p-4 rounded-lg text-center">데이터베이스<br><span class="text-sky-400 text-sm">PostgreSQL / Vector DB</span></div>
         </div>
     </section>
 
