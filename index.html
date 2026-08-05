@@ -22,6 +22,7 @@
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="#overview" class="hover:text-sky-400">시스템 개요</a>
+                <a href="#pipeline" class="hover:text-sky-400">데이터 파이프라인</a>
                 <a href="#scenario" class="hover:text-sky-400">사용자 시나리오</a>
                 <a href="#kpi" class="hover:text-sky-400">성공 지표</a>
             </div>
@@ -42,6 +43,35 @@
                     <li><strong>교차 검증:</strong> 학내 Wi-Fi 연결 및 앱 기반 2차 인증으로 정확도 98.5% 달성.</li>
                     <li><strong>효율성:</strong> 강의당 10~15분의 호명 시간을 절약하여 수업 시간 확보.</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Data Pipeline -->
+        <section id="pipeline" class="mb-20">
+            <h2 class="text-2xl font-bold mb-6 text-purple-400">데이터 블럭 데이터 파이프라인</h2>
+            <div class="glass-panel p-8 rounded-2xl">
+                <p class="text-slate-300 mb-6">엣지 디바이스(Jetson Orin Nano/Raspberry Pi)의 연산 자원을 최적화하고, 서버단에서 고정밀 인식을 수행하는 2단계 하이브리드 아키텍처입니다.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg text-sky-300">1. Edge 전처리 파이프라인 (연산 최적화)</h3>
+                        <ul class="text-sm text-slate-400 space-y-2 list-decimal list-inside">
+                            <li><strong>프레임 샘플링/ROI:</strong> 불필요한 영역 마스킹 및 15fps 중 핵심 프레임만 선별.</li>
+                            <li><strong>플리커 완화:</strong> 시간축 이동 평균 필터로 조명 깜빡임 제거.</li>
+                            <li><strong>경량 검출:</strong> YOLOv8n-Face 기반 초경량 안면 탐지.</li>
+                            <li><strong>품질 필터링:</strong> FQI(Face Quality Index) 기반 저품질 패치 차단.</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg text-indigo-300">2. Server 후처리 파이프라인 (고정밀 인식)</h3>
+                        <ul class="text-sm text-slate-400 space-y-2 list-decimal list-inside">
+                            <li><strong>정밀 정렬:</strong> 5-Point Landmark 기반 Affine Transformation.</li>
+                            <li><strong>시계열 트래킹:</strong> ByteTrack 기반 고유 ID 유지 및 누적 유사도 판정.</li>
+                            <li><strong>교차 검증:</strong> Wi-Fi BSSID 및 Dynamic QR 연동 2차 검증.</li>
+                            <li><strong>데이터 증강:</strong> 3D Mesh 변환을 통한 다각도 임베딩 학습.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
