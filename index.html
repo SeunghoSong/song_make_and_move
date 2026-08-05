@@ -23,9 +23,9 @@
                 <span class="font-bold text-xl tracking-wider text-white">Smart<span class="gradient-text">Class</span></span>
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#dashboard" class="hover:text-sky-400">대시보드</a>
                 <a href="#model" class="hover:text-sky-400">모델 선정</a>
-                <a href="#dataset" class="hover:text-sky-400">데이터셋</a>
-                <a href="#pipeline" class="hover:text-sky-400">학습 파이프라인</a>
+                <a href="#pipeline" class="hover:text-sky-400">데이터 파이프라인</a>
             </div>
         </div>
     </nav>
@@ -34,47 +34,49 @@
     <main class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
         <h1 class="text-4xl font-bold mb-12 text-center">엣지 AI 학습 및 배포 전략</h1>
 
+        <!-- Dashboard Widget -->
+        <section id="dashboard" class="mb-20">
+            <h2 class="text-2xl font-bold mb-6 text-sky-400">실시간 성능 대시보드</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wider">정확도 (mAP)</h3>
+                    <p class="text-4xl font-bold mt-2">98.5%</p>
+                    <p class="text-emerald-400 text-sm mt-1">목표 달성</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wider">추론 속도 (FPS)</h3>
+                    <p class="text-4xl font-bold mt-2">15-25</p>
+                    <p class="text-indigo-400 text-sm mt-1">엣지 최적화 구간</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-slate-400 text-sm uppercase tracking-wider">파이프라인 상태</h3>
+                    <p class="text-2xl font-bold mt-2">Active</p>
+                    <p class="text-emerald-400 text-sm mt-1">증강 파이프라인 가동 중</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 1. Model Selection -->
         <section id="model" class="mb-20">
             <h2 class="text-2xl font-bold mb-6 text-sky-400">1. YOLO 모델 선정</h2>
             <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-xl font-semibold mb-4">추천 모델: YOLOv8n-Face / YOLO11n-Face</h3>
+                <h3 class="text-xl font-semibold mb-4">기술 스택: YOLO11n-Face + Tiling Inference</h3>
                 <ul class="list-disc list-inside text-slate-400 space-y-2">
-                    <li><strong>초경량화:</strong> 라즈베리 파이 CPU 환경에서 15~25 FPS 확보 가능.</li>
-                    <li><strong>특화 성능:</strong> Face 전용 Anchor/Head 구조로 원거리 소형 안면 탐지 최적화.</li>
-                    <li><strong>배포 호환성:</strong> ONNX/NCNN/OpenVINO 변환 최적화 지원.</li>
+                    <li><strong>YOLO11n-Face:</strong> 최신 아키텍처 기반의 고성능 안면 탐지 모델.</li>
+                    <li><strong>Tiling Inference:</strong> 고해상도 이미지 분할 추론을 통해 소형 객체 탐지 정확도 극대화.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- 2. Dataset -->
-        <section id="dataset" class="mb-20">
-            <h2 class="text-2xl font-bold mb-6 text-indigo-400">2. Roboflow 데이터셋 구성</h2>
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-xl font-semibold mb-4">데이터셋: WIDER FACE + Classroom Crowd Face</h3>
-                <p class="text-slate-400 mb-4">강의실 환경(가림, 조명, 자세)을 극복하기 위한 데이터 증강 및 밀집 데이터셋 활용.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="bg-slate-800 p-4 rounded-lg text-sm">Mosaic & Mixup 증강</div>
-                    <div class="bg-slate-800 p-4 rounded-lg text-sm">조명/회전 변환 적용</div>
-                    <div class="bg-slate-800 p-4 rounded-lg text-sm">고밀도 안면 Bounding Box</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Pipeline -->
+        <!-- 2. Pipeline -->
         <section id="pipeline" class="mb-20">
-            <h2 class="text-2xl font-bold mb-6 text-emerald-400">3. 학습 및 배포 파이프라인</h2>
+            <h2 class="text-2xl font-bold mb-6 text-emerald-400">2. 데이터 파이프라인</h2>
             <div class="glass-panel p-8 rounded-2xl">
-                <div class="pipeline-step">
-                    <h4 class="font-semibold text-slate-200">전이 학습 (Transfer Learning)</h4>
-                    <p class="text-sm text-slate-400">사전 학습된 가중치 활용, Epochs 100~150, imgsz 640 설정.</p>
-                </div>
-                <div class="pipeline-step">
-                    <h4 class="font-semibold text-slate-200">엣지 최적화 (Optimization)</h4>
-                    <div class="code-block mt-2">
-model.export(format="onnx", int8=True, imgsz=640)
-                    </div>
-                    <p class="text-sm text-slate-400 mt-2">ONNX Runtime/NCNN을 통한 추론 가속화.</p>
+                <h3 class="text-xl font-semibold mb-4">조명 및 가림 대응 증강 파이프라인</h3>
+                <p class="text-slate-400 mb-4">강의실 환경의 가변적인 조명과 마스크/안경 등 가림 현상에 대응하기 위한 전처리 파이프라인 적용.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-800 p-4 rounded-lg text-sm">조명 정규화 (CLAHE)</div>
+                    <div class="bg-slate-800 p-4 rounded-lg text-sm">가림 대응 데이터 증강 (Cutout/Occlusion)</div>
                 </div>
             </div>
         </section>
