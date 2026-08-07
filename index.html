@@ -23,6 +23,7 @@
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="#overview" class="hover:text-sky-400">시스템 개요</a>
                 <a href="#pipeline" class="hover:text-sky-400">데이터 파이프라인</a>
+                <a href="#rag-analysis" class="hover:text-sky-400">RAG 시스템 분석</a>
                 <a href="#scenario" class="hover:text-sky-400">사용자 시나리오</a>
                 <a href="#kpi" class="hover:text-sky-400">성공 지표</a>
             </div>
@@ -75,6 +76,29 @@
             </div>
         </section>
 
+        <!-- RAG Analysis -->
+        <section id="rag-analysis" class="mb-20">
+            <h2 class="text-2xl font-bold mb-6 text-emerald-400">RAG 기반 시스템 분석 및 개선</h2>
+            <div class="glass-panel p-8 rounded-2xl">
+                <p class="text-slate-300 mb-6">본 시스템은 Vector Retrieval과 Metadata를 결합하여 모델 성능 및 데이터 분석을 자동화하는 RAG(Retrieval-Augmented Generation) 계층을 도입하였습니다.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-800 p-6 rounded-xl">
+                        <h3 class="font-bold text-lg text-emerald-300 mb-2">지능형 분석</h3>
+                        <p class="text-sm text-slate-400">"최근 오인식이 빈번한 촬영 조건은?"과 같은 자연어 질의에 대해, Vector DB의 임베딩 유사도와 카메라/조명/포즈 메타데이터를 검색하여 LLM이 원인을 분석합니다.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-xl">
+                        <h3 class="font-bold text-lg text-emerald-300 mb-2">지속적 모델 개선</h3>
+                        <p class="text-sm text-slate-400">Active Learning으로 선별된 Hard Sample을 Metric Learning에 활용하고, RAG를 통해 개선된 모델의 성능 변화를 추적하여 최적의 학습 파이프라인을 유지합니다.</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-slate-900 rounded-lg border border-emerald-900/50">
+                    <p class="text-sm text-emerald-200 font-mono">
+                        [핵심 아키텍처] Edge AI (추론) → Server (Vector DB 검색 및 RAG 분석) → Active Learning (Hard Sample 선별) → Metric Learning (모델 재학습) → Edge Deploy (모델 배포)
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Scenario -->
         <section id="scenario" class="mb-20">
             <h2 class="text-2xl font-bold mb-6 text-indigo-400">사용자 시나리오</h2>
@@ -121,7 +145,7 @@
     </main>
 
     <footer class="py-10 text-center text-slate-600 text-sm">
-        © 2024 SmartClass-AI Development Team. 하이브리드 출석 관리 시스템.
+        © 2026 SmartClass-AI Development Team. 하이브리드 출석 관리 시스템.
     </footer>
 </body>
 </html>
